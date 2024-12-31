@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster Dashboard</title>
+  <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="./scripts/dashboard.js" defer></script>
+</head>
+
+<body>
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>TaskMaster</h2>
+    <button class="close-sidebar-btn" id="close-sidebar-btn" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <ul class="sidebar-links">
+    <li><a href="#" class="sidebar-link">Dashboard</a></li>
+    <li><a href="#" class="sidebar-link">Tasks</a></li>
+    <li><a href="#" class="sidebar-link">Profile</a></li>
+    <li><a href="#" class="sidebar-link" id="sidebar-logout-btn">Logout</a></li>
+  </ul>
+</div>
+
+  <div id="toast-container"></div>
+
+  <!-- Modal for Task Deletion Confirmation -->
+  <div class="modal2" id="delete-task-modal">
+    <div class="modal2-content">
+      <h2>Are you sure you want to delete this task?</h2>
+      <div class="modal2-actions">
+        <button id="delete-task-confirm" class="confirm-btn">Yes, Delete</button>
+        <button id="delete-task-cancel" class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="top-menu-wrapper">
+      <div class="hamburg-2">
+
+        <div class="hamburger-menu" id="hamburger-btn" aria-label="Open Menu" aria-expanded="false">
+          <span style="font-size:30px; cursor:pointer"><i class="fa-solid fa-bars"></i> </span>
+          
+        </div>
+      </div>
+      <div class="navbar">
+        <div class="user-info">
+          <span class="username"></span>
+          <button class="logout-btn" id="main-logout-btn">Logout</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="task-filters">
+      <input type="text" id="search-bar" placeholder="Search tasks..." class="search">
+      <div class="filters">
+        <select id="priority-filter">
+          <option value="">All Priorities</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <input type="date" id="deadline-filter" class="date-picker">
+      </div>
+    </div>
+
+    <div class="task-list">
+      <!-- Dynamically populated tasks go here -->
+
+    </div>
+
+    <button class="fab" id="add-task-btn">+</button>
+  </div>
+
+  <!-- Modal for Task Creation -->
+  <div class="modal" id="task-modal">
+    <div class="modal-content">
+      <h2>Create New Task</h2>
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task Title" required>
+        <textarea id="task-description" placeholder="Task Description"></textarea>
+        <select id="task-priority" required>
+          <option value="">Select priority...</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <select id="task-status" required>
+          <option value="">Select task status...</option>
+          <option value="In progress">In Progress</option>
+          <option value="Completed">Completed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+        <label for="task-deadline" class="due-date">Due Date:</label>
+        <input type="date" id="task-deadline" required>
+        <button type="submit" class="submit-btn">Save Task</button>
+        <button type="button" class="close-btn" id="close-modal">Close</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
