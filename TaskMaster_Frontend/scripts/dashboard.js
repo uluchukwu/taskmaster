@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
     try {
-        const response = await fetch('http://localhost:5000/api/auth/current-user', {
+        const response = await fetch('https://taskmaster-9drx.onrender.com/api/auth/current-user', {
             method: 'GET',
             credentials: 'include'
         });
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const username = document.querySelector(".username");
         username.innerHTML = `Hello, <b>${data.username}!</b>`;
     } catch (error) {
-        console.log(response.message);
+        console.log(error);
            
     }
     
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         mainLogoutBtn.disabled = true;
 
         try {
-            const response = await fetch("http://localhost:5000/api/auth/logout", {
+            const response = await fetch("https://taskmaster-9drx.onrender.com/api/auth/logout", {
                 method: 'POST',
                 credentials: 'include', 
             });
