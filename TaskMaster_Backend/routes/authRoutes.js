@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
             res.cookie('token', token, {
                 httpOnly: true, 
                 secure: process.env.NODE_ENV === 'production',
-                sameSite: 'None', 
+                 
                 maxAge: 3600000 // 1 hour
             });
 
@@ -87,6 +87,7 @@ router.get('/current-user', protect, async (req, res) => {
             })
         }
 
+        
         res.status(200).json(user)
 
     } catch (error) {
