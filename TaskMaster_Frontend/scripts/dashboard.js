@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
     try {
-        const response = await fetch('https://taskmaster-fc59.onrender.com/api/auth/current-user', {
+        const response = await fetch('http://localhost:5000/api/auth/current-user', {
             method: 'GET',
             credentials: 'include'
         });
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         mainLogoutBtn.disabled = true;
 
         try {
-            const response = await fetch("https://taskmaster-fc59.onrender.com/api/auth/logout", {
+            const response = await fetch("http://localhost:5000/api/auth/logout", {
                 method: 'POST',
                 credentials: 'include', 
             });
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     sidebarLogoutBtn.addEventListener("click", logout)
-    mainLogoutBtn.addEventListener("click", logout)
+    mainLogoutBtn.addEventListener("click", logout) 
 
     
     const hamburgerBtn = document.getElementById("hamburger-btn");

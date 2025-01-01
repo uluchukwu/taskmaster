@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             try {
                 const response = await fetch(
-                    "https://taskmaster-fc59.onrender.com/api/auth/signup",
+                    "http://localhost:5000/api/auth/signup",
                     {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             } catch (error) {
                 console.log("Signup error:", error);
-                showToast(response.message || "Failed to register user", "error");
+                showToast("Failed to register user", "error");
             } finally {
                 authBtn.disabled = false;
                 authBtn.innerHTML = "Sign Up";
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             try {
                 const response = await fetch(
-                    "https://taskmaster-fc59.onrender.com/api/auth/login",
+                    "http://localhost:5000/api/auth/login",
                     {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             } catch (error) {
                 console.error("Login error:", error);
-                showToast(response.message || "Failed to login user", "error");
+                showToast("Failed to login user", "error");
             } finally {
                 authBtn.disabled = false;
                 authBtn.innerHTML = "Login";
