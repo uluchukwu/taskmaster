@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             try {
                 const response = await fetch(
-                    "http://localhost:5000/api/auth/signup",
+                    "https://taskmaster-9drx.onrender.com/api/auth/signup",
                     {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             try {
                 const response = await fetch(
-                    "http://localhost:5000/api/auth/login",
+                    "https://taskmaster-9drx.onrender.com/api/auth/login",
                     {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -137,6 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (response.ok) {
                     showToast("Login successful", "success");
+
+
                     window.location.href = "dashboard.html"; // Redirect
                 } else {
                     showToast(data.message || "Login failed", "error");
