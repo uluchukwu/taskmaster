@@ -14,7 +14,7 @@ connectDB()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:"https://taskmaster-lemon-five.vercel.app/",
+    origin:"https://taskmaster-lemon-five.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
