@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             credentials: 'include'
         });
     
-        // if (response.status === 401) {
-        //     window.location.href = 'login.html';
-        //     return;
-        // }
+        if (response.status === 401) {
+            window.location.href = 'login.html';
+            return;
+        }
     
         const data = await response.json();
         
